@@ -2,7 +2,9 @@
 for Children with OCD 
 OCDear 
  </h1>
- Developed by MOHAMED GAMAL EZZAT
+<H2 align="center"> Developed by
+ MOHAMED GAMAL EZZAT</H2>
+ 
 
 Project Description
 
@@ -26,9 +28,12 @@ Tracks progress over time, providing valuable insights for treatment adjustments
 Aims to improve overall treatment outcomes and quality of life for children.
 
 Team Members
+
 -Mohamed Gamal Ezzat
 
+
 -Nada Yasser Eltemsah
+
 -Nada Ali Hussein
 
 -Norhan Sameh Fahmy
@@ -56,6 +61,14 @@ Eng. Rana Khattab
 ## Photos from Project 
 ![2](https://github.com/user-attachments/assets/78a9cdf6-0a1a-4be9-b3e4-c700e2c2048e)
 ![1](https://github.com/user-attachments/assets/4418cb76-3137-4af7-bdc2-c959c9edfbb5)
+![image](https://github.com/user-attachments/assets/8238ba0b-5073-4533-80db-79e719c53e15)
+
+
+![image](https://github.com/user-attachments/assets/60a509c6-07aa-4565-897c-2a0f9cafbfd4)
+
+![image](https://github.com/user-attachments/assets/0e41ad76-245c-4d95-9ca3-5f9cc8866909)
+
+[screencapture-itch-io-dashboard-analytics-2024-06-28-01_41_41.pdf](https://github.com/user-attachments/files/17891668/screencapture-itch-io-dashboard-analytics-2024-06-28-01_41_41.pdf)
 
 <p align="center">Abstract </p>
 <p>Obsessive-Compulsive Disorder (OCD) is a common mental illness that can seriously 
