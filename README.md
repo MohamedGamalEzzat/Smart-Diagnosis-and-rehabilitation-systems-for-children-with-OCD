@@ -57,10 +57,16 @@ Assoc. Prof. Samaa Shohieb
 Eng. Rana Khattab
 
 <h2>Graduation Project 2023-2024</h2>
+
+ <h4>GAMES FOR PROJECT</h4>
+ <h2>https://mogamal.itch.io/</h2>
  
-## Photos from Project 
+## Photos from Project
+
 ![2](https://github.com/user-attachments/assets/78a9cdf6-0a1a-4be9-b3e4-c700e2c2048e)
+
 ![1](https://github.com/user-attachments/assets/4418cb76-3137-4af7-bdc2-c959c9edfbb5)
+
 ![image](https://github.com/user-attachments/assets/8238ba0b-5073-4533-80db-79e719c53e15)
 
 
