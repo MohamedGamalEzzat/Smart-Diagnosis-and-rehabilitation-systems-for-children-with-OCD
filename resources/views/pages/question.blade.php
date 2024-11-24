@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>OCD</title>
+    <link rel="shortcut icon" type="image/x-icon" href="../style pages/image/Graduation logo 3.png">
     <!-- Bootstrap file -->
     <link rel="stylesheet" href="{{asset('../style pages/boot/bootstrap.min.css')}}">
     <!-- css file -->

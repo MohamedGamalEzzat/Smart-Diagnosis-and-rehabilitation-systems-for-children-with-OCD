@@ -6,6 +6,7 @@
     <title>
         OCD
     </title>
+    <link rel="shortcut icon" type="image/x-icon" href="../style pages/image/Graduation logo 3.png">
     <!-- Bootstrap file -->
     <link rel="stylesheet" href="{{asset('../style pages/boot/bootstrap.min.css')}}">
     <!-- css file -->
@@ -21,40 +22,49 @@
 <body>
     <div class="Tasks">
         <!-- Start header -->
-        <div class="head justify-content-between">
-            <div class="container">
-                <div class="content d-flex justify-content-between align-items-center">
-                    <nav class="navbar navbar-expand-lg navbar-light">
-                        <div class="container-fluid d-flex justify-content-between">
-                            <button class="navbar-toggler" id="headBtn" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
-                                <span class="navbar-toggler-icon"></span>
-                            </button>
-                            <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
-                                <div class="links img-char justify-content-start">
-                                    <img class="char" src="{{asset('../style pages/image/Char.png')}}" alt="character">
+        <div class="header">
+            <div class="head justify-content-between">
+                <div class="container">
+                    <div class="content d-flex justify-content-between align-items-center">
+                        <nav class="navbar navbar-expand-lg navbar-light">
+                            <div class="container-fluid d-flex justify-content-between">
+                                <button class="navbar-toggler" id="headBtn" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+                                    <span class="navbar-toggler-icon"></span>
+                                </button>
+                                <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+                                    <div class="links img-char justify-content-start " id="welcome">
+
+                                        @if (Auth::check())
+                                        <h5>
+                                            أهلا: {{Auth::user()->name}}
+                                        </h5>
+                                        <span><i class="fa-solid fa-hand"></i></span>
+                                      @endif
+
+                                    </div>
+                                    <ul class="navbar-nav me-auto mb-2 mb-lg-0 d-flex ul-learning">
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="{{url('Personal')}}">الصفحة الشخصية</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link active"href="{{url('Tasks22')}}">المهام</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="{{url('game796')}}">الألعاب</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link " href="{{url('learn')}}">التعلم</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" aria-current="page"   href="{{url('home888')}}">الرئيسية</a>
+                                        </li>
+                                    </ul>
                                 </div>
-                                <ul class="navbar-nav me-auto mb-2 mb-lg-0 d-flex ul-learning">
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{url('Personal')}}">الصفحة الشخصية</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link active"href="{{url('Tasks')}}">المهام</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link " href="{{url('games1')}}">الألعاب</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{url('learn')}}">التعلم</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" aria-current="page" href="{{url('home')}}">الرئيسية</a>
-                                </li>
-                                </ul>
                             </div>
+                        </nav>
+                        <div class="logo">
+                            <img src="{{asset('../style pages/image/Graduation logo 3.png')}}" alt="">
                         </div>
-                    </nav>
-                    <div class="logo">
-                        <img src="{{asset('../style pages/image/Graduation logo 3.png')}}" alt="">
                     </div>
                 </div>
             </div>
@@ -72,7 +82,7 @@
                         <h4>استعد للمرح والتشويق مع عالم مليء بالألوان والمغامرات في فيديوهاتنا الممتعة !</h4>
                     </div>
                     <div class="imgQuery">
-                        <img src="{{('../style pages/image/girl header.png')}}" alt="">
+                        <img src="{{asset('../style pages/image/girl header.png')}}" alt="">
                     </div>
                     <div class="links d-flex justify-content-between">
                         <a href="#"> تصفح الآن</a>
@@ -84,6 +94,31 @@
                 </div>
             </div>
         </div>
+
+        <hr>
+        {{-- @if(session('success'))
+        <div class="alert alert-success">
+            {{ session('success') }}
+        </div>
+    @endif
+
+    @if(session('error'))
+        <div class="alert alert-danger">
+            {{ session('error') }}
+        </div>
+    @endif --}}
+
+
+
+        {{-- <h6>الرقم العشوائي: {{ $randomString }}</h6>
+        <form method="POST" action="{{ route('randomString') }}">
+            @csrf
+
+            <label for="user_number">الرقم المدخل:</label>
+            <input type="text" id="user_number" name="user_number" required>
+            <input type="hidden" name="random_number" value="{{ $randomString }}">
+            <button type="submit">تأكيد الرقم</button>
+        </form> --}}
         <!-- End Loading -->
         <!-- Start tasksList -->
         <div class="ListTask position-relative">
@@ -92,10 +127,17 @@
                     <p>قائمة المهام</p>
                     <h4>قوائم مهام ممتعة وجذابة للأطفال للحفاظ على إنتاجيتهم وتحقيق أهدافهم</h4>
                 </div>
-                <div class="DoTask">
-                    <i class="fa-solid fa-plus" id="insertTask"></i>
-                    <input type="text" id="WriteTask" placeholder="إضافة مهمة جديدة" value="">
-                </div>
+
+                <form  method="POST" action="{{ route('taskssto') }}">
+                    @csrf
+
+                    <div class="DoTask">
+                        <button   type="submit"  id="AddTasks" ><i class="fa-solid fa-plus" id="insertTask"></i></button>
+                        <input type="text" id="WriteTask" placeholder="إضافة مهمة جديدة" value="" name="t_insert_text">
+                    </div>
+
+                </form>
+
                 <div class="Image position-absolute">
                     <img src="{{asset('../style pages/image/TrophyTask.png')}}" alt="">
                 </div>
@@ -107,6 +149,12 @@
                 <div class="MainTitle text-center">
                     <p>قائمة المهام</p>
                     <h4>قائمة مهام اليوم </h4>
+                </div>
+                <div center>
+
+                    {{-- <input type="checkbox" class="fs-6 checkTask">
+                    <input type="text" value="     {{auth()->user()->name}}">
+                    <i class="fa-solid fa-xmark position-absolute"></i> --}}
                 </div>
                 <div class="content">
                 </div>
@@ -128,11 +176,11 @@
                 <div class="box">
                     <h4>معلومات الموقع</h4>
                     <ul>
-                        <li><a href="#">الرئيسية</a></li>
-                        <li><a href="#">ماذا عنا </a></li>
-                        <li><a href="#">التعلم</a></li>
-                        <li><a href="#">الألعاب</a></li>
-                        <li><a href="#">المهام</a></li>
+                        <li><a href="{{url('home888')}}">الرئيسية</a></li>
+                        <li><a href="{{url('openingPage')}}">ماذا عنا </a></li>
+                        <li><a href="{{url('learn')}}">التعلم</a></li>
+                        <li><a href="{{url('games796')}}">الألعاب</a></li>
+                        <li><a href="{{url('Tasks22')}}">المهام</a></li>
                     </ul>
                 </div>
                 <div class="box">

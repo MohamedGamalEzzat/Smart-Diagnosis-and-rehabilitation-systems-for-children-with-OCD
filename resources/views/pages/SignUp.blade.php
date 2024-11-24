@@ -7,6 +7,7 @@
     <title>
         OCD signup
     </title>
+    <link rel="shortcut icon" type="image/x-icon" href="../style pages/image/Graduation logo 3.png">
     <!-- Bootstrap file -->
     <link rel="stylesheet" href="{{asset('../style pages/boot/bootstrap.min.css')}}">
     <!-- css file -->
@@ -28,6 +29,16 @@
                     <h3 class="mainH3">إنشاء حساب</h3>
 
 
+                        @if ($errors->any())
+                            <div class="alert alert-danger">
+                                <ul>
+                                    @foreach ($errors->all() as $error)
+                                        <li>{{ $error }}</li>
+                                    @endforeach
+                                </ul>
+                            </div>
+                        @endif
+
                     <form method="POST" action="{{route('signup.store')}}">
                         @csrf
                         <div class="name">
@@ -36,7 +47,8 @@
                         </div>
 
                         <input type="text email" placeholder="  الإيميل" class="d-block w-75" name="email">
-                        <input type="text email" placeholder="رقم الهاتف  " class="d-block w-75" name="phone">
+                        <input type="text"   placeholder="رقم الهاتف  " class="d-block w-75" name="phone">
+                        
                         <input type="password" placeholder="كلمة المرور" class=" w-75 position-relative" name="password">
                         <i class="fa-regular fa-eye-slash password " id="passwordHidden"></i>
                         <i class="fa-regular fa-eye showPassword" ></i>
@@ -47,7 +59,7 @@
                         <div id="showWarning"></div>
                         <div class="switch">
                             <input type="submit" name='sigup' value="إنشاء حساب" class="d-block sendBtn text-center w-75">
-                        
+
 
                     </form>
                         <div class="text-center ">

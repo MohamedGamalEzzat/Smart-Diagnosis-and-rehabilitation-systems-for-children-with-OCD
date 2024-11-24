@@ -6,6 +6,7 @@
     <title>
         OCD   @yield('title')
     </title>
+    <link rel="shortcut icon" type="image/x-icon" href="../style pages/image/Graduation logo 3.png">
     <!-- Bootstrap file -->
     <link rel="stylesheet" href="{{asset('../style pages/boot/bootstrap.min.css')}}">
     <!-- css file -->
@@ -30,25 +31,39 @@
                                 <span class="navbar-toggler-icon"></span>
                             </button>
                             <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
-                                <div class="links">
+
+                                <div class="links img-char justify-content-start " id="welcome">
+
+                                    @if (Auth::check())
+                                    <span>
+                                        أهلا: {{Auth::user()->name}}
+                                    </span>
+                                    @else
                                     <a href="{{url('SignUp')}}">إنشاء حساب</a>
                                     <a href="{{url('login')}}">تسجيل الدخول</a>
+                                    @endif
+                                    <span><i class="fa-solid fa-hand"></i></span>
                                 </div>
+
+
+
                                 <ul class="navbar-nav me-auto mb-2 mb-lg-0 d-flex ">
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{url('Personal')}}">الصفحة الشخصية</a>
-                                </li>
+                                    @if (Auth::check())
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="{{url('Personal')}}">الصفحة الشخصية</a>
+                                    </li>
+                                    @endif
                                 <li class="nav-item">
                                     <a class="nav-link"href="{{url('Tasks')}}">المهام</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{url('games1')}}">الألعاب</a>
+                                    <a class="nav-link" href="{{url('game')}}">الألعاب</a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{url('learn')}}">التعلم</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link active" aria-current="page"   href="{{url('home')}}">الرئيسية</a>
+                                    <a class="nav-link active" aria-current="page"   href="{{url('home78')}}">الرئيسية</a>
                                 </li>
                                 </ul>
                             </div>
@@ -83,11 +98,11 @@
             <div class="box">
                 <h4>معلومات الموقع</h4>
                 <ul>
-                    <li><a href="#">الرئيسية</a></li>
-                    <li><a href="#">ماذا عنا </a></li>
-                    <li><a href="#">التعلم</a></li>
-                    <li><a href="#">الألعاب</a></li>
-                    <li><a href="#">المهام</a></li>
+                    <li><a href="{{url('home')}}">الرئيسية</a></li>
+                        <li><a href="#">ماذا عنا </a></li>
+                        <li><a href="{{url('learn')}}">التعلم</a></li>
+                        <li><a href="{{url('games1')}}">الألعاب</a></li>
+                        <li><a href="{{url('Tasks')}}">المهام</a></li>
                 </ul>
             </div>
             <div class="box">

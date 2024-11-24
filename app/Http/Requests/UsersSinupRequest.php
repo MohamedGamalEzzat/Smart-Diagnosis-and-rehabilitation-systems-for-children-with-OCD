@@ -22,7 +22,12 @@ class UsersSinupRequest extends FormRequest
     public function rules(): array
     {
         return [
-        
+            // 'name' => 'required|string|max:255',
+            // 'email' => 'required|email|max:255',
+            // 'Age' => 'required',
+            // 'phone' => 'required',
+            // 'password' => 'required',
+            // // Add other rules as needed
         ];
     }
 }

@@ -91,6 +91,7 @@ function checkP1(ind){
         QuestionP1.style.display="none";
         QuestionP2.style.display="block";
         console.log(total);
+        Choose =false;
       })
     }
   });
@@ -132,6 +133,7 @@ function checkP2(ind){
             QuestionP2.style.display="none";
             QuestionP3.style.display="block";
             console.log(total);
+        Choose =false;
       })
     }
   });
@@ -174,6 +176,7 @@ function checkP3(ind){
             QuestionP3.style.display="none";
             QuestionP4.style.display="block";
             console.log(total);
+        Choose =false;
       })
     }
   });
@@ -217,6 +220,7 @@ function checkP4(ind){
             QuestionP4.style.display="none";
             QuestionP5.style.display="block";
             console.log(total);
+        Choose =false;
       })
     }
   });
@@ -257,6 +261,7 @@ function checkP5(ind){
             QuestionP5.style.display="none";
             QuestionP6.style.display="block";
             console.log(total);
+        Choose =false;
       })
     }
   });
@@ -299,6 +304,7 @@ function checkP6(ind){
             QuestionP6.style.display="none";
             QuestionP7.style.display="block";
             console.log(total);
+        Choose =false;
       })
     }
   });
@@ -342,6 +348,7 @@ function checkP7(ind){
             QuestionP7.style.display="none";
             QuestionP8.style.display="block";
             console.log(total);
+        Choose =false;
       })
     }
   });
@@ -384,6 +391,7 @@ function checkP8(ind){
             QuestionP8.style.display="none";
             QuestionP9.style.display="block";
             console.log(total);
+        Choose =false;
       })
     }
   });
@@ -425,6 +433,7 @@ function checkP9(ind){
             QuestionP9.style.display="none";
             QuestionP10.style.display="block";
             console.log(total);
+          Choose =false;
       })
     }
   });
@@ -468,15 +477,15 @@ function checkP10(ind){
       SurePart10.addEventListener("click",()=>{
             if(total<=7){
               textH3="أعراض وسواس قهري خفيفة جدا.";
-              textP=`ي الغالب ال تحتاج إلى العالج إال إذا كان معدال قليال ألنك
+              textP=`ي الغالب ال تحتاج إلى العالج إال إذا كان معدال قليال ألنك 
               تتجنب مواقف كثيرة أو لديك أفعال قهرية فقط أو وسواس فقط.`
             }else if(total<=15 && total>=8){
               textH3="أعراض خفيفة"
-              textP=`التي من المحتمل أن تتعارض في حياتك بطرق ملحوظة(إذا كان لديك وسواس
+              textP=`التي من المحتمل أن تتعارض في حياتك بطرق ملحوظة(إذا كان لديك وسواس 
                 أو أفكار فهذا يعني شدة متوسطة)`
             }else if(total<=23 && total>=16){
               textH3=`أعراض متوسطة`
-              textP=` إحراز 11 نقطة هو الحد األدنى المطلوب لدخول دراسات عالج اضطراب
+              textP=` إحراز 11 نقطة هو الحد األدنى المطلوب لدخول دراسات عالج اضطراب 
               الوسواس القهري.`
             }else if(total<=31 && total>=24){
               textH3=`أعراض ملحوظة`
@@ -486,7 +495,7 @@ function checkP10(ind){
               textP=`التي من المحتمل أن تسبب عجزا بالغا. قد تحتاج إلى عالج يقوم به اختصاصي
               في اضطراب الوسواس القهري.`
             }
-
+            
             Show.innerHTML=`
             <div class="showRate position-absolute">
             <div class="mainRate">
@@ -494,7 +503,7 @@ function checkP10(ind){
                 <h3>${textH3}</h3>
                 <p>${textP}</p>
                 <div class="links">
-                    <a href="home">لنبدأ رحلتنا</a>
+                    <a href="loginnn">لنبدأ رحلتنا</a>
                 </div>
             </div>
         </div>`;

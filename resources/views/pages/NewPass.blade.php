@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>OCD</title>
+    <link rel="shortcut icon" type="image/x-icon" href="../style pages/image/Graduation logo 3.png">
     <!-- Bootstrap file -->
     <link rel="stylesheet" href="{{asset('../style pages/boot/bootstrap.min.css')}}">
     <!-- css file -->
@@ -23,25 +24,37 @@
                 <div class="container mainPadding containerPage">
                     <div class="title">
                         <h3 class="mainH3">اكتب كلمة المرور الجديدة</h3>
-                        <span>يجب أن تكون كلمة المرور الجديدة مختلفة</span>          
+                        <span>يجب أن تكون كلمة المرور الجديدة مختلفة</span>
                     </div>
-                    <form action="#">
+
+
+
+                    @if ($errors->any())
+                    <div class="alert alert-danger">
+                        <ul>
+                            @foreach ($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                @endif
+
+                    <form  method="POST" action="{{ route('newPassword') }}">
+                        @csrf
                         <div class="firstpass d-flex">
-                            <input type="text" placeholder="كلمة المرور الجديدة" class="d-block inputNewPass ">
+                            <input type="text" placeholder="كلمة المرور الجديدة" class="d-block inputNewPass " name="password">
                             <i class="fa-regular fa-eye-slash password " id="passwordHidden"></i>
                             <i class="fa-regular fa-eye showPassword" ></i>
                         </div>
-                        <div class="surwpass d-flex">
-                        <input type="text" placeholder="تأكيد كلمة المرور " class="d-block inputNewPass ">
-                        <i class="fa-regular fa-eye-slash password " id="passwordHidden"></i>
-                        <i class="fa-regular fa-eye showPassword" ></i>
+
+
+                        <div class="switch">
+                            <div class="loginSubmit">
+                                <input type="submit" name='sigup' value="تسجيل الدخول" class="d-block sendBtn text-center w-75">
+                            </div>
                         </div>
                     </form>
-                    <div class="switch">
-                        <div class="loginSubmit">
-                            <a href="#" class="text-center">تسجيل الدخول</a>
-                        </div>
-                    </div>
+
                 </div>
             </div>
             <div class="leftSide">

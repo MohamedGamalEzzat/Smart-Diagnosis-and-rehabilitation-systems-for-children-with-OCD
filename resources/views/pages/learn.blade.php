@@ -6,6 +6,7 @@
     <title>
         OCD
     </title>
+    <link rel="shortcut icon" type="image/x-icon" href="../style pages/image/Graduation logo 3.png">
     <!-- Bootstrap file -->
     <link rel="stylesheet" href="{{asset('../style pages/boot/bootstrap.min.css')}}">
     <!-- css file -->
@@ -19,57 +20,64 @@
     <link href="https://fonts.googleapis.com/css2?family=Readex+Pro:wght@500&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="learning">
+    <div class="learning ">
         <!-- Start Header  -->
-        <div class="head justify-content-between">
-            <div class="container">
-                <div class="content d-flex justify-content-between align-items-center">
-                    <nav class="navbar navbar-expand-lg navbar-light">
-                        <div class="container-fluid d-flex justify-content-between">
-                            <button class="navbar-toggler" id="headBtn" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
-                                <span class="navbar-toggler-icon"></span>
-                            </button>
-                            <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
-                                <div class="links img-char justify-content-start">
-                                    <img class="char" src="../style pages/image/Char.png" alt="character">
+        <div class="header">
+            <div class="head justify-content-between">
+                <div class="container">
+                    <div class="content d-flex justify-content-between align-items-center">
+                        <nav class="navbar navbar-expand-lg navbar-light">
+                            <div class="container-fluid d-flex justify-content-between">
+                                <button class="navbar-toggler" id="headBtn" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+                                    <span class="navbar-toggler-icon"></span>
+                                </button>
+                                <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+                                    <div class="links img-char justify-content-start " id="welcome">
+
+                                        @if (Auth::check())
+                                        <h5>
+                                            أهلا: {{Auth::user()->name}}
+                                        </h5>
+                                        <span><i class="fa-solid fa-hand"></i></span>
+                                      @endif
+                                    </div>
+                                    <ul class="navbar-nav me-auto mb-2 mb-lg-0 d-flex ul-learning">
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="{{url('Personal')}}">الصفحة الشخصية</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link"href="{{url('Tasks22')}}">المهام</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="{{url('game796')}}">الألعاب</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link active" href="{{url('learn')}}">التعلم</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" aria-current="page"   href="{{url('home888')}}">الرئيسية</a>
+                                        </li>
+                                    </ul>
                                 </div>
-                                <ul class="navbar-nav me-auto mb-2 mb-lg-0 d-flex ul-learning">
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{url('Personal')}}">الصفحة الشخصية</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link"href="{{url('Tasks')}}">المهام</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{url('games1')}}">الألعاب</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link active" href="{{url('learn')}}">التعلم</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" aria-current="page"   href="{{url('home')}}">الرئيسية</a>
-                                </li>
-                                </ul>
                             </div>
+                        </nav>
+                        <div class="logo">
+                            <img src="{{asset('../style pages/image/Graduation logo 3.png')}}" alt="">
                         </div>
-                    </nav>
-                    <div class="logo">
-                        <img src="{{asset('../style pages/image/Graduation logo 3.png')}}" alt="">
                     </div>
                 </div>
-
             </div>
         </div>
             <!-- End Header  -->
             <!-- Start Loading  -->
-            <div class="loadingVideo loadingBg position-relative">
+            <div class="loadingVideo loadingBg position-relative loadingScroll">
                 <div class="container d-flex">
                     <div class="image">
                         <img src="{{asset('../style pages/image/girl header.png')}}" alt="" class="dis-none">
                     </div>
                     <div class="content">
                         <div class="text">
-                            <p>أهلا بك فى موقنا</p>
+                            <p>أهلا بك فى موقعنا</p>
                             <h4>استعد للمرح والتشويق مع عالم مليء بالألوان والمغامرات في فيديوهاتنا الممتعة !</h4>
                         </div>
                         <div class="imgQuery">
@@ -86,6 +94,7 @@
                 </div>
             </div>
             <!--End Loading  -->
+            <div class="playVideo">
             <!-- Start Sec3 -->
             <div class="AboutVideos">
                 <div class="insert-img">
@@ -116,9 +125,106 @@
                         <img src="{{asset('../style pages/image/ice.png')}}" alt="">
                     </div>
                     <div class="content d-grid">
-                        <div class="box">
+
+
+
+
+                        @foreach($videos as $video)
+                        <div class="box" onclick="window.location.href='{{ route('videoshow2',$video->id) }}'">
                             <div class="image">
-                                <img src="{{asset('../style pages/image/OCD 1.png')}}" alt="">
+                                <video controls width="100" height="100">
+                                    <source src="{{ $video->cvideo_file }}" type="video/mp4">
+                                    Your browser does not support the video tag.
+                                </video>
+                            </div>
+                            <div class="text">
+                                <h4>{{ $video->cvideo_name }}</h4>
+                                <p></p>
+
+                                <ul>
+                                    @foreach($latestVideoUpdates as $update)
+                                        @if($update->control_video_id == $video->id)
+                                            <li>
+                                                {{-- <p>وقت آخر مشاهدة: {{ $update->oovideo_time }}</p> --}}
+
+                                                @if($update->oovideo_time && $video->cvideo_time)
+                                                {{-- تحويل الأوقات إلى الصيغة المناسبة --}}
+                                                @php
+                                                    $lastWatchedTime = strtotime($update->oovideo_time); // الوقت المحدد في قاعدة البيانات
+                                                    $originalVideoTime = strtotime($video->cvideo_time); // الوقت الأصلي من جدول ControlVideo
+
+                                                    // التحقق من صحة الأوقات قبل القيام بعمليات الحساب
+                                                    if ($lastWatchedTime !== false && $originalVideoTime !== false) {
+                                                        // حساب الفرق بين الأوقات بالثواني
+                                                        $timeDifference = abs($lastWatchedTime - $originalVideoTime); // قيمة مطلقة لضمان الحصول على القيمة الموجبة
+
+                                                        // تحديد اللون بناءً على وجود فارق زمني
+                                                        if ($timeDifference == 0) {
+                                                            // لو كان الفرق بين الوقت المحدد والوقت الأصلي صفر، يعني أن الفيديو مشاهد بالكامل
+                                                            $status = gmdate("H:i:s", $timeDifference); // استخدام الوقت المتبقي كنص بدلاً من "غير مكتمل"
+                                                            $color = "#00FF00"; // أخضر للنسبة المئوية 100%
+                                                        } else {
+                                                            $status = gmdate("H:i:s", $timeDifference); // استخدام الوقت المتبقي كنص بدلاً من "غير مكتمل"
+                                                            $color = "#FF0000"; // أحمر لأن الفيديو غير مشاهد بالكامل
+                                                        }
+
+                                                        // تحديد العرض بناءً على الوجود أو عدم الوجود لفارق زمني
+                                                        $width = ($timeDifference > 0) ? '50%' : '100%';
+                                                    } else {
+                                                        // في حالة عدم وجود فارق زمني، يعرض الشريط باللون الأخضر كاملًا
+                                                        $status = "مدة الفيديو غير صالحة"; // عرض رسالة للإشعار بعدم صلاحية مدة الفيديو
+                                                        $color = "#CCCCCC"; // أخضر للنسبة المئوية 100%
+                                                        $width = '100%';
+                                                    }
+
+                                                @endphp
+
+
+                                                {{-- عرض الفرق بين الوقت الأصلي والوقت المحدد --}}
+                                                <p>الوقت اللي  باقي من فديو</p>
+
+                                                {{-- عرض حالة الفيديو --}}
+                                                <div style="width: 100%; background-color: #f2f2f2;">
+                                                    <div style="width: {{ $width }}; background-color: {{ $color }}; text-align: center;">{{ $status }}</div>
+                                                </div>
+                                            @else
+
+                                                <p>مدة الفيديو غير صالحة</p>
+                                            @endif
+                                                {{-- <p>حالة الفيديو: {{ $update->vvvideo_completed }}</p> --}}
+                                                <p>حالة الفيديو:
+                                                    @if($update->vvvideo_completed == 'مكتمل')
+                                                        <span style="color: green;">{{ $update->vvvideo_completed }} <i class="fas fa-check-circle" style="font-size: 20px; color: inherit;"></i></span>
+                                                    @else
+                                                        <span style="color: red;">{{ $update->vvvideo_completed }} <i class="fas fa-times-circle" style="font-size: 20px; color: inherit;"></i></span>
+
+                                                    @endif
+                                                </p>
+                                            </li>
+                                        @endif
+                                    @endforeach
+                                </ul>
+                                @if($latestVideoUpdates->isEmpty())
+                                <p>ابدأ </p>
+                                @endif
+                            </div>
+                        </div>
+                    @endforeach
+
+                </div>
+            </div>
+
+            {{-- <!-- Start OtherVideo -->
+            <div class="OthersVideo">
+                <div class="container">
+                    <div class="MainTitle text-center">
+                        <p> فيديوهات عن الوسواس القهري</p>
+                        <h4>فيديوهات آخري </h4>
+                    </div>
+                    <div class="content d-grid">
+                        <div class="box">
+                            <div class="video">
+                                <video src="../style pages/image/mov_bbb.mp4" ></video>
                             </div>
                             <div class="text">
                                 <h4>قصص الوسواس القهري</h4>
@@ -126,8 +232,8 @@
                             </div>
                         </div>
                         <div class="box">
-                            <div class="image">
-                                <img src="{{asset('../style pages/image/OCD 1.png')}}" alt="">
+                            <div class="video">
+                                <video src="../style pages/image/mov_bbb.mp4" ></video>
                             </div>
                             <div class="text">
                                 <h4>قصص الوسواس القهري</h4>
@@ -135,62 +241,8 @@
                             </div>
                         </div>
                         <div class="box">
-                            <div class="image">
-                                <img src="{{asset('../style pages/image/OCD 1.png')}}" alt="">
-                            </div>
-                            <div class="text">
-                                <h4>قصص الوسواس القهري</h4>
-                                <p>اضطراب الوسواس القهري هو حالة صحية عقلية تتميز بتكرار الأفكار غير المرغوب فيها، والمعروفة باسم الهواجس، والسلوكيات المتكررة أو الطقوس العقلية، والمعروفة باسم القهر.</p>
-                            </div>
-                        </div>
-                        <div class="box">
-                            <div class="image">
-                                <img src="{{asset('../style pages/image/OCD 1.png')}}" alt="">
-                            </div>
-                            <div class="text">
-                                <h4>قصص الوسواس القهري</h4>
-                                <p>اضطراب الوسواس القهري هو حالة صحية عقلية تتميز بتكرار الأفكار غير المرغوب فيها، والمعروفة باسم الهواجس، والسلوكيات المتكررة أو الطقوس العقلية، والمعروفة باسم القهر.</p>
-                            </div>
-                        </div>
-                        <div class="box">
-                            <div class="image">
-                                <img src="{{asset('../style pages/image/OCD 1.png')}}" alt="">
-                            </div>
-                            <div class="text">
-                                <h4>قصص الوسواس القهري</h4>
-                                <p>اضطراب الوسواس القهري هو حالة صحية عقلية تتميز بتكرار الأفكار غير المرغوب فيها، والمعروفة باسم الهواجس، والسلوكيات المتكررة أو الطقوس العقلية، والمعروفة باسم القهر.</p>
-                            </div>
-                        </div>
-                        <div class="box">
-                            <div class="image">
-                                <img src="{{asset('../style pages/image/OCD 1.png')}}" alt="">
-                            </div>
-                            <div class="text">
-                                <h4>قصص الوسواس القهري</h4>
-                                <p>اضطراب الوسواس القهري هو حالة صحية عقلية تتميز بتكرار الأفكار غير المرغوب فيها، والمعروفة باسم الهواجس، والسلوكيات المتكررة أو الطقوس العقلية، والمعروفة باسم القهر.</p>
-                            </div>
-                        </div>
-                        <div class="box">
-                            <div class="image">
-                                <img src="{{asset('../style pages/image/OCD 1.png')}}" alt="">
-                            </div>
-                            <div class="text">
-                                <h4>قصص الوسواس القهري</h4>
-                                <p>اضطراب الوسواس القهري هو حالة صحية عقلية تتميز بتكرار الأفكار غير المرغوب فيها، والمعروفة باسم الهواجس، والسلوكيات المتكررة أو الطقوس العقلية، والمعروفة باسم القهر.</p>
-                            </div>
-                        </div>
-                        <div class="box">
-                            <div class="image">
-                                <img src="{{asset('../style pages/image/OCD 1.png')}}" alt="">
-                            </div>
-                            <div class="text">
-                                <h4>قصص الوسواس القهري</h4>
-                                <p>اضطراب الوسواس القهري هو حالة صحية عقلية تتميز بتكرار الأفكار غير المرغوب فيها، والمعروفة باسم الهواجس، والسلوكيات المتكررة أو الطقوس العقلية، والمعروفة باسم القهر.</p>
-                            </div>
-                        </div>
-                        <div class="box">
-                            <div class="image">
-                                <img src="{{asset('../style pages/image/OCD 1.png')}}" alt="">
+                            <div class="video">
+                                <video src="../style pages/image/mov_bbb.mp4" ></video>
                             </div>
                             <div class="text">
                                 <h4>قصص الوسواس القهري</h4>
@@ -199,13 +251,15 @@
                         </div>
                     </div>
                 </div>
-            </div>
-            <!-- End learnVideo  -->
+            </div> --}}
+            <!-- End OtherVideo -->
+
+
             <!-- Start Footer -->
             <div class="footer">
                 <div class="container d-flex content">
                     <div class="box">
-                        <img src="{{asset('../style pages/image/Graduation logo 3.png')}}" alt="">
+                        <img src="../style pages/image/Graduation logo 3.png" alt="">
                         <h6>تمكين الأطفال الذين يعانون من الوسواس القهري: التحرر من الهواجس والأفعال القهرية</h6>
                         <div class="icons d-flex">
                             <img src="{{asset('../style pages/image/youtube.png')}}" alt="">
@@ -216,11 +270,11 @@
                     <div class="box">
                         <h4>معلومات الموقع</h4>
                         <ul>
-                            <li><a href="#">الرئيسية</a></li>
-                            <li><a href="#">ماذا عنا </a></li>
-                            <li><a href="#">التعلم</a></li>
-                            <li><a href="#">الألعاب</a></li>
-                            <li><a href="#">المهام</a></li>
+                            <li><a href="{{url('home888')}}">الرئيسية</a></li>
+                            <li><a href="{{url('openingPage')}}">ماذا عنا </a></li>
+                            <li><a href="{{url('learn')}}">التعلم</a></li>
+                            <li><a href="{{url('games796')}}">الألعاب</a></li>
+                            <li><a href="{{url('Tasks22')}}">المهام</a></li>
                         </ul>
                     </div>
                     <div class="box">
@@ -238,7 +292,14 @@
             <!-- End Footer -->
     </div>
 
+    <script>
+        // التقاط قيمة الـ ID عند تغيير الخيار في القائمة المنسدلة
+        document.getElementById('doctor-select').addEventListener('change', function() {
+            var doctorId = this.value; // القيمة المحددة للدكتور (ID)
+            console.log('Selected Doctor ID:', doctorId); // يمكنك استخدامها لإرسالها إلى الكونترولر
+        });
+    </script>
     <script src="{{asset('../style pages/boot/bootstrap.bundle.min.js')}}"></script>
     <!-- js file -->
-    <script src="{{asset('../style pages/js/main-3.js')}}" defer ></script>
+    <script src="{{asset('../style pages/js/main-4.js')}}" defer></script>
 </body>

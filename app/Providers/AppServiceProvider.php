@@ -21,5 +21,11 @@ class AppServiceProvider extends ServiceProvider
     public function boot(): void
     {
         Schema::defaultStringLength(191);
+
+          // تعيين حجم الطلبات POST
+      ini_set('post_max_size', '100M'); // 100 MB
     }
+
+
+
 }

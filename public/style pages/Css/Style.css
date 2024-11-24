@@ -5,6 +5,7 @@
     box-sizing: border-box;
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
+    color: black;
 }
 /* End  Global rules */
 /* Start Global Variable  */
@@ -35,7 +36,38 @@ input{
     border: none;
     outline: none;
 }
-
+#welcome span{
+    font-size: 1.6rem;
+    font-weight: 600;
+    transition: var(--main-transaction);
+}
+#welcome span:hover{
+    color: var(--main-color);
+}
+#welcome span i{
+    transition: var(--main-transaction);
+}
+#welcome span i:hover{
+    color: var(--main-color);
+    animation: moveHands 2s alternate linear infinite 1s;
+}
+@media (max-width:991px){
+    #welcome{
+        display: inline-block;
+        margin-right: 18px;
+    }
+}
+@keyframes moveHands{
+    40%{
+        transform: rotate(70deg) scale(1.2);
+    }
+    60%{
+        transform: rotate(0deg) scale(1);
+    }
+    80%{
+        transform: rotate(-70deg) scale(1.2);
+    }
+}
 @media(min-width:991px){
     html{
         font-size:16px;
@@ -232,7 +264,7 @@ input{
     .sign .leftSide{
         display: none;
     }
-    h3{
+    .sign h3{
         text-align: center;
     }
     .sign input:not(.sendBtn){
@@ -771,7 +803,7 @@ input{
     .ResetPass .leftSide{
         display: none;
     }
-    h3{
+    .ResetPass h3{
         text-align: center;
     }
     .sign input{
@@ -1106,7 +1138,6 @@ input{
 }
 @media(min-width:992px){
     .home .head ul{
-        justify-content: flex-end;
         width: 650px;
     }
     .head .links{
@@ -1252,7 +1283,7 @@ input{
         width: 235px;
         position: relative;
         top: 120px;
-        left: 35px;
+        left: 65px;
         transform: translate(-50%,-50%);
     }
 }
@@ -1285,328 +1316,282 @@ input{
     }
 }
 /* End  loading */
-/* start About */
-.home .about{
-    gap: 40px;
-    margin-top: 88px; 
+/* Start game and moreBtn */
+.playGame .boxGame{
+    margin-top: 44px;
+    box-shadow: 1px 3px 30px 0 rgb(0 0 0 / 5%);
+    border-radius: 10px;
+}
+.playGame .info{
+    padding: 10px;
+}
+.playGame .boxGame img{
+    width: 100%;
+}
+.playGame .boxGame h5{
+    font-weight: 500;
+    font-size:1.5rem ;
+    line-height:1.875rem ;
+    color: var(--main-color);
+    margin-top: 10px;
+}
+.playGame .boxGame p{
+    color: #737373;
+    font-weight: 400;
+    font-size: 1rem;
+    line-height:1.75rem ;
+}
+.playGame .image{
+    top: 90px;
+    right: 15px;
+}
+
+.MoreBtn{
+    border-radius: 10px;
+    background-color: var(--main-color);
+    width: fit-content;
+    margin: auto;
+    margin-top: 65px;
+    padding: 5px 50px;
+    cursor: pointer;
+    transition: var(--main-transaction);
+}
+.MoreBtn:hover{
+    background-color: white;
+    border: 1px solid var(--main-color);
+}
+.MoreBtn:hover a{
+    color: var(--main-color);
+}
+.MoreBtn a{
+    color: white;
+    font-size: 1.25rem;
+    line-height:2.6525rem;
+}
+@media (min-width:992px){
+    .playGame .boxGame p{
+        width: 990px;
+    }
+}
+@media (max-width:991px){
+    .playGame .image{
+        top: 78px;
+    }
+    .playGame .image img{
+        width: 45px;
+    }
+}
+/* End  game and moreBtn */
+/* Start AboutHome*/
+.about-home {
     position: relative;
+    margin: 88px 88px 88px 88px;
 }
-.home .about .contant{
-    top: -100px;
+.about-home .image img{
+    position: absolute;
 }
-.home .about .star{
-    transform: translate(-50%,-50%);
+.about-home .image img:nth-child(1){
+    left: 60px;
     width: 86px;
     height: 82px;
-    position: absolute;
-    top: -52px;
-    left: -22px;
 }
-.home .about .contant{
-    text-align: right;
-    top: -40px;
-    left: 00px;
+.about-home .image img:nth-child(2){
+    top: 390px;
+    right: -60px;
+    left: 1209.49px;
+    transform: rotate(-19.77deg);
+
 }
-.home .about .contant h4{
-    height: 25px;
-    font-family: Readex Pro;
+.about-home .container .left-image img{
+    width: 431px;
+    height: 438px;
+    position: relative;
+    top: -70px;
+}
+.about-home .container .about-heading .dis-none{
+    display: none;
+}
+.about-home .container .row .about-heading{
+    margin-top: 44px;
+}
+.about-home .container .row .about-heading p{
     font-size: 20px;
     font-weight: 500;
     line-height: 25px;
-    letter-spacing: 0em;
     color: #00994F;
-
 }
-.home .about .contant h3{
-    font-family: Readex Pro;
+.about-home .container .row .about-heading span{
     font-size: 30px;
     font-weight: 500;
     line-height: 42px;
-    letter-spacing: 0em;
     text-align: right;
-
+    
 }
-.home .about .contant p{
-    height: 90px;
-    font-family: Readex Pro;
+.about-home .container .row .about-heading h5{
     font-size: 18px;
     font-weight: 400;
     line-height: 30px;
-    letter-spacing: 0em;
-    text-align: right;
-    color:#737373;
-
+    color: #737373;
+    margin-top: 44px;
 }
-.um{
-    top: 100px;
+.about-home .container .row .view{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row-reverse;
 }
-.view{
-    width: 100%;
-    margin-top: 5px;
-    margin-bottom: 80px;
-    justify-content: space-around;
-}
-.view h4{
-    font-family: Readex Pro;
-    font-size: 20px;
-    font-weight: 500;
-    line-height: 25px;
-    letter-spacing: 0em;
-    text-align: left;
-}
-.view i{
-    
-    height: 40px;
-}
-.home .about .box img{
-    position: relative;
-    top: 40px;
-    left: 100px;
-    width: 431px;
-    height: 438px;
-}
-.home .about .container .contant .img img{
-    width: 0px ;
-    height: 0px;
+.about-home .container .row .view .container{
+    width: 50%;
+    text-align: center;
+    margin-bottom: 22px;    
 }
 @media(max-width:990px){
-    .home .about{
-        margin-top: 110px;
+    .about-home{
+        margin: 0px;
     }
-    .home .about .box img{
-        position: relative;
-        top: -251px;
-        left: -4px;
-        width: 0px;
-        height: 287px;
+    .about-home .container .left-image .h{
+        display: none;
     }
-    .home .about .container .contant .img img{
+    .about-home .container .about-heading .dis-none{
+        display: flex;
         width: 250px;
         height: 191px;
-        margin-bottom: 14px;
-        margin-top: -15px;
-        position: relative;
-        right: 50px;
+        margin: auto;
     }
-    .home .about .star{
-        position: absolute;
+    .about-home .image img:nth-child(1){
         width: 40px;
         height: 40px;
-        top: 22px;
-        left: 33px;
+        top: 2px;
+        left: 30px;
     }
-    .home .about .contant {
-        text-align: right;
-        top: -100px;
-        left: 0px;
+    .about-home .image img:nth-child(2){
+        bottom: 100px;
+        left: 100px;
+        top: auto;
+        right: auto;
     }
-    .view{
+    .about-home .container .row .view{
         display: flex;
         flex-direction: column;
-        margin-top: -153px;
-        margin-right: -164px;
+        margin-top: 20px;
     }
-    .um {
-        top: -32px;
-        right: 270px;
+    .about-home .container .row .view .container{
+        width: 100%;
+        margin-top: 10px;
+        text-align: right;
+        margin-bottom: 22px;    
     }
-
 }
-/* End About */
-/* Start Videos */
-.home .videos{
+/* End AboutHome*/
+/* Start VideoHome */
+.videos-home{
     width: 100%;
-    height: 914px;
-    background-image: url(../image/videos.png);
-   background-repeat: no-repeat;
-   background-position:inherit;
-   background-size: cover;
-}
-
-.home .p1{
-    width: 100%;
-    height: 25px;
+    background-image: url(../image/Union\ \(1\).png);
+    background-size: cover;
+    background-repeat: no-repeat;
     position: relative;
-    top: 50px;
+}
+.videos-home .image img{
+    position: absolute;
+}
+.videos-home .video-header{
+    position: relative;
+    top: 44px;
+}
+.videos-home .image img:nth-child(1){
+    top: 100px;
+    left: 100px;
+    animation: move-photo-1  2s linear alternate infinite;
+
+}
+.videos-home .image img:nth-child(2){
+    top: 86px;
+    right: 45px;
+}
+.videos-home .container2{
+    padding-bottom: 35px;
+}
+.videos-home .container2 .row{
+    width: 100%;
+    display: flex;
+    margin-bottom: 44px;
+}
+.videos-home .container2 .row .col{
+    width: 33%;
+}
+.videos-home .container2 .row .col .card{
+    margin: auto;
+    width: 315px;
+    height:466px;
+}
+.videos-home .container2 .row .col .card img{
+    width: 273px;
+    height: 190px;
+    margin: -15px 15px 10px 15px;
+    position: relative;
+}
+.videos-home .container2 .row .col .card .hue{
+    position: relative;
+    margin-top: -23px;
+}
+.videos-home .container2 .row .col .card .hue::after{
+    content: "";
+    position: absolute;
+    top: 40px;
+    left: 15px;
+    right: 15px;
+    bottom: 0px;
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0.356);
+}
+.videos-home .container2 .row .col .card i{
+    position: relative;
+    top: 100px;
+    right: 115px;
+    background-color: white;
+    border-radius: 50%;
+    border-color: white;
+    z-index: 1;
+}
+.videos-home .p1{
+    height: 25px;
     color: #00994F;
-    font-family: Readex pro;
     font-size: 20px;
     font-weight: 500;
     line-height: 25px;
-    letter-spacing: 0em;
     text-align: center;
 }
-.home .p2{
-    font-family: Readex Pro;
-    position: relative;
+.videos-home .p2{
     height: 84px;
-    top: 50px;
     font-size: 30px;
     font-weight: 500;
     line-height: 42px;
-    letter-spacing: 0em;
     text-align: center;
     color:#121212;
+    margin-bottom: 88px;
 }
-.home .container2{
-    position: relative;
-    top: 70px;
-
-}
-.home .container2 .row .card-title{
+.container2 .row .card-title{
     color:#00994F;
     text-align: center;
-    font-family: Readex Pro;
     font-size: 24px;
     font-weight: 500;
     line-height: 30px;
-    letter-spacing: 0em;
 
 }
-.home .container2 .row {
-    margin: 0px !important;
-}
-.home .container2 .row .card-text{
+
+.videos-home .container2 .row .card-text{
     color: #737373;
-    font-family: Readex Pro;
     font-size: 16px;
     font-weight: 400;
     line-height: 28px;
-    letter-spacing: 0em;
     text-align: center;
-}
-.home .container2 .row .card{
-    align-items:center !important;
-    width: 315px;
-    height:466px;
-
-}
-.home .videos .btn{
-    width:219px;
-    height: 65px;
-    margin-right: 650px;
-    margin-top: 150px;
-    padding: 10px;
-    border-radius: 10px;
-    gap: 10px;
-    align-items: center;
-    background-color: #00994F;
-    color: white;
-    font-family: Readex Pro;
-    font-size: 20px;
-    font-weight: 600;
-    line-height: 25px;
-    letter-spacing: 0em;
-    margin-bottom: -250px;
-} 
-.home .videos .btn:hover{
-    background-color: white;
-    color: #00994F;
-    border-color: #00994F;
-}
-.home .container2 img{
-    width: 273px;
-    height: 190px;
-}
-@media(max-width:990px){
-    .home .container2 .row .card {
-        align-items: center !important;
-        width: 315px;
-        margin:auto;
-    }
-    .home .videos {
-        width: 100%;
-        height: auto;
-        background-image: url(../image/Union\ \(1\).png);
-        background-position: inherit;
-        background-size: cover;
-        margin-top: -50px;
-    }
-    .home .videos .btn{
-        margin-right: 100px;
-        margin-bottom: 65px;
-    }
-    .home .p2{
-        margin-bottom: 70px;
-    }
-}
-/* End Videos */
-/* Start games */
-.home .gameso{
-    width: 100%;
-    position: relative;
-}
-.home .gameso .img2 img{
-    position: absolute;
-    top: 73px ; 
-}
- .home .gameso .img2 img:nth-child(1){
-    right: 50px;
-    top: 200px;
-}
- .home .gameso .img2 img:nth-child(2){
-    top: 60px;
-    left: 260px;
-}
- .home .gameso .p1{
-    font-size: 20px;
-    font-weight: 500;
-    line-height: 25px;
-    text-align: center;
-    color: #00994F;    
-}
- .home .gameso .p2{
-    font-size: 30px;
-    font-weight: 500;
-    line-height: 42px;
-    text-align: center;
-}
- .home .gameso .container2{
-    display: block;
-    justify-content: center;
-}
- .home .gameso .container2 .car {
-    margin: 88px !important;
 }
 
-.home .gameso .container2 .car{
-    display: flex;
-    justify-content: space-between;
-    flex-direction: row;
-    flex-wrap: wrap;
-}
- .home .gameso .container2 .car .card{
-    border: white;
-    margin-bottom: 30px;
-    margin-right: 88px;
-    text-align: center;
-    box-shadow: 1px 3px 30px 0px #0000000D;
-}
- .home .gameso .container2 .car .card .btn{
-    width: 1000;
-    width: 173px;
-    height: 50px;
-    padding: 10px;
-    border-radius: 10px;
-    font-size: 18px;
-    font-weight: 600;
-    line-height: 23px;
-    text-align: center;
-    gap: 10px;
-}
- .home .gameso .container2 .car .card:hover {
-    transition: var(--main-transaction);
-    transform: scale(1.1);
-    box-shadow: 1px 3px 30px 0px #00000054 ;
-
-}
- .home .gameso .btn2{
+.videos-home .btn{
     width: 219px;
     height: 65px;
     padding: 10px;
     border-radius: 10px;
     display: grid;
-    gap: 10px;
     background-color: #00994F;
     color: white;
     font-size: 20px;
@@ -1614,69 +1599,285 @@ input{
     margin: auto;
     align-items: center;
 } 
- .home .gameso .btn2:hover{
+.videos-home .btn:hover{
     background-color: white;
     color: #00994F;
     border-color: #00994F;
 }
+
 @media(max-width:991px){
-
-    .home .gameso{
-         width: 100%;
+    .videos-home{
+        height: 100%;
+        width: 100%;
+        padding-bottom: 25px;
     }
-
-    .home .gameso .btn2 {
-        margin: auto;
+    .videos-home .container2 {
+        width: 315px;
+        margin:auto;
+        position: relative;
+        top: 88px;
     }
-
-    .container2 .car {
-     display: flex;
-     flex-direction: column;
-     flex-wrap: nowrap;
+    .videos-home .container2 .row{
+        display: flex;
+        flex-direction: column;
+        gap: 44px;
     }
-
-    .home .gameso .container2 .car{
-        margin: 0 !important;
+    .videos-home .container2 .row .col{
+        gap: 44px;
     }
-
-    .home .gameso .container2 .car .dis{
-        display: none;
-    }
-
-    .container2 .car .card1 {
-        align-items: center !important;
+    .container2 .row .card {
         width: 315px;
         margin-top: 55px;
     }
+    .videos-home .image .dis-none{
+        display: none;
+    } 
+    .videos-home .btn{
+        margin-bottom: 88px;
 
-    .home .gameso {
-        position: relative;
-    }
-
-    .home .gameso .img2 img{
-        position: absolute;
-        top: 4470px;
-        right: 5px;
-    }
-
-    .home .gameso .img2 img:nth-child(1){
-        width: 71px;
-        height: 58px;
-        top: 98rem;
-        right: 10px;
-    }
-
-    .home .gameso .img2 img:nth-child(2){
-        width: 72px;
-        height: 72px;
-        top: 160px;
-        right: 20px; 
-       }
-    .home .gameso .btn2{
-        margin-bottom: 100px;
+    } 
+}
+/* End VideoHome */
+/* End Home */
+/* Start Opening page */
+/* Start loading */
+@media (max-width: 991px){
+    .OpenPages .loading .imageQuery img{
+        top: 161px;
+        left: 40px;
     }
 }
-/* End Games */
+/* End loading */
+/* Start AboutOpening  */
+.aboutOpen{
+    margin-top: var(--main-margin-top);
+}
+.aboutOpen .content p:first-child{
+    font-weight: 500;
+    color: var(--main-color);
+    font-size: 1.25rem;
+    line-height: 1.5625rem;
+}
+.aboutOpen .content h4{
+    font-weight: 500;
+    font-size:1.875rem ;
+    line-height:2.625rem;
+    margin-top: 30px;
+}
+.aboutOpen .content p:last-child{
+    font-weight: 400;
+    font-size: 1rem;
+    line-height: 1.875rem;
+    color: #737373;
+    margin-top: 60px;
+}
+@media(min-width:992px){
+    .aboutOpen .image{
+        width:538.62px;
+    }
+    .aboutOpen .content{
+        width: 566px;
+    }
+    .aboutOpen .content p:last-child{
+        width:513px;
+    }
+}
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {
+    .aboutOpen .container{
+        flex-direction: column;
+        gap:30px;
+    }
+    .aboutOpen .image{
+        text-align: center;
+    }
+    .aboutOpen .image,
+    .aboutOpen .content{
+        width: 100%;
+        margin: auto;
+    }
+    .aboutOpen .content p:last-child{
+        width: 100%;
+    }
+}
+@media(max-width:991px){
+    .aboutOpen .container{
+        flex-direction: column;
+        gap:30px;
+    }
+    .aboutOpen .image{
+        margin: auto;
+    }
+    .aboutOpen .image img{
+        width: 300px;
+    }
+    .aboutOpen .content p:last-child{
+        margin-top: 30px;
+    }
+}
+/* End AboutOpening  */
+/* Start Description */
+.Des{
+    margin-top: var(--main-margin-top);
+    background-image: url(../image/Union\ \(1\).png);
+    background-position: center;
+    background-size: cover;
+}
+.Des .MainTitle{
+    padding: 50px 0;
+}
+.Des .MainTitle h4{
+    font-size:1.875rem ;
+    line-height:2.625rem ;
+}
+.Des .content{
+    grid-template-columns: repeat(auto-fill,minmax(300px,1fr));
+    gap: 65px;
+    padding: 20px;
+}
+.Des .content .box{
+    background-color: white;
+    border: 1px dashed var(--main-color);
+    border-radius: 10px;
+    padding: 15px;
+}
+.Des .box .image img{
+    width: 292px;
+}
+.Des .box .text{
+    padding: 10px;
+    margin-top: 20px;
+}
+.Des .text h4{
+    font-size:1.5rem ;
+    line-height:1.875rem ;
+    color: var(--main-color);
+}
+.Des ul{
+    list-style-type: disc;
+    color: #737373;
+    gap: 16px;
+    display: inline-grid;
+    margin-top: 10px;
+    padding-right: 30px;
+}
+.Des ul li{
+    font-size: 1rem;
+    line-height: 1.75rem;
+    color: #737373;
+}
+.Des .insertImg img:first-child{
+    top: 13%;
+    left: 13%;
+    transform: translate(-50%,-50%);
+}
+.Des .insertImg img:last-child{
+    top: 13%;
+    right: -60px;
+    transform: translate(-50%,-50%);
+}
+@media (min-width:992px){
+    .Des .MainTitle h4{
+        Width:665px;
+        margin: auto;
+    }
+}
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {
+    .Des .content{
+    grid-template-columns: repeat(auto-fill,minmax(200px,1fr));
+    padding-bottom: 40px;
+    }
+    .Des .box .image img{
+        width: 100%;
+    }
+    .Des .text h4{
+        padding-right: 13px;
+    }
+}
+@media (max-width:991px){
+    .Des .MainTitle h4{
+        width: 100%;
+    }
+    .Des .insertImg img{
+        width: 50px;
+    }
+    .Des .insertImg img:first-child{
+        top: 50px;
+    }
+    .Des .insertImg img:last-child{
+        right: 0;
+        top: 180px;
+    }
+    .Des .content .box{
+        padding: 40px 15px;
+    }
+    .Des .content{
+        padding-bottom:70px
+    }
+}
+/* End  Description */
+/* Start Developer*/
+.developers{
+    margin-top: var(--main-margin-top);
+}
+.developers .MainTitle{
+    margin-bottom: 55px;
+}
+.developers .MainTitle p{
+    font-weight: 500;
+    font-size: 1.25rem;
+    line-height: 1.5625rem;
+    color: var(--main-color);
+}
+.developers .MainTitle h4{
+    font-size: 1.875rem ;
+    line-height: 2.625rem;
+}
+.developers .contentOne{
+    grid-template-columns: repeat(auto-fill,minmax(300px,1fr));
+    gap: 33px;
+}
+.developers .box .text{
+    padding: 20px;
+}
+.developers .text h4{
+    font-weight: 500;
+    font-size:1.875rem ;
+    line-height: 2.625rem;
+    color: var(--main-color);
+}
+.developers .text p{
+    font-size: 1.2rem;
+    line-height:2.625rem ;
+}
+.developers .contentTwo{
+    grid-template-columns: repeat(auto-fill,minmax(350px,1fr));
+}
+.developers .insert{
+    bottom: 9%;
+    right: -43px;
+    transform: translate(-50%,-50%);
+}
+
+@media(min-width:992px){
+    .developers .contentTwo{
+        gap:20px  160px;
+        margin-top: 55px;
+    }
+    .developers .MainTitle h4{
+        width:665px;
+        margin: auto;
+    }
+}
+@media(max-width:991px){
+    .developers .insert{
+        right: -25px;
+    }
+    .developers .insert img{
+        width: 50px;
+    }
+}
+/* End Developer*/
+/* End Opening page */
 /* Start Tasks */
 .tasks{
     margin-top: var(--main-margin-top);
@@ -1713,6 +1914,9 @@ input{
 .tasks .content ul{
     list-style-type: disc;
     padding: 0 18px;
+    color: white;
+}
+.tasks .content ul li{
     color: white;
 }
 .tasks .content ul li a{
@@ -1970,13 +2174,13 @@ input{
     height: 70px;
 }
 @media(min-width:992px){
-    .learning .head ul{
+    .header .head ul{
         width: 550px;
         width: 650px;
     }
 }
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {
-    .learning .head ul{
+    .header .head ul{
         width: 100%;
     }
 }
@@ -2310,6 +2514,47 @@ input{
     text-align: center;
     padding-top: 10px;
 }
+
+.learnVideo .remainTime h5 {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 28px;
+}
+.learnVideo #showProgress {
+    background-color: #F6F2F2;
+    width:215px ;
+    height: 13px;
+    margin:20px auto;
+    border-radius: 2px;
+}
+.learnVideo #showProgress div {
+    background-color: red;
+    width:50%;
+    height: 13px;
+    border-radius: 2px;
+}
+.learnVideo #showProgress div p{
+    font-size: 12px;
+    padding:1px ;
+    Line-height:12.5px;
+    color: white;
+}
+.learnVideo #stateVideo {
+    padding-bottom: 20px;
+}
+.learnVideo #stateVideo span{
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+}
+.learnVideo #stateVideo span:last-of-type {
+    color: red;
+}
+.learnVideo #stateVideo i{
+    color: red;
+    font-size: 18px;
+    padding: 0 5px 0;
+}
 @media(max-width:767px){
     .learnVideo .MainTitle h5{
         width: 350px;
@@ -2329,1031 +2574,229 @@ input{
 }
 /* End   learnVideo */
 /* End  page learn  */
-/* Start game page 1  */
+/* Start Page Game */
 
-/* Start header game page 1 */
-.gamep1 .head{
-    max-width: 100%;
+/* Start AboutGame*/
+.AboutGame{
+    margin-top: var(--main-margin-top);
 }
-.gamep1 .head .image img{
-    right: 0px;
-    margin-left: 250px;
+.AboutGame .container{
+    gap: 24px;
 }
-.gamep1 .head .navbar-expand-lg .navbar-collapse{
-    flex-direction: row-reverse;
-}
-.gamep1 .head ul {
-    gap: 20px;
-    height: 35px;
-}
-.gamep1 .head ul a{
-    font-size: 1.12rem;
+.AboutGame .text p{
+    color: var(--main-color);
+    font-size: 1.25rem;
+    line-height: 1.5625rem;
     font-weight: 500;
-    line-height: 22.5px;
+}
+.AboutGame .text h3{
+    font-size: 1.875rem;
+    line-height: 2.625rem;
+    font-weight: 500;
+}
+.AboutGame .content > p{
     color: #737373;
-    position: relative;
+    font-size: 1.125rem;
+    line-height:1.875rem ;
+    margin-top: 25px;
 }
-.gamep1 .head ul a:hover{
-    color: var(--main-color);
-    transition: var(--main-transaction);
-}
-.gamep1 .head ul a.active{
-    font-weight: 600;
-    color: var(--main-color) !important;
-    position: relative;
-}
-.gamep1 .head ul a.active::after{
-    position: absolute;
-    content: "";
-    width: 60%;
-    height: 3px;
-    background-color:var(--main-color);
-    left: 50%;
-    transform: translate(-50%, -50%);
-    bottom: -5px;
-    transition: var(--main-transaction);
-}
-.gamep1 .head ul a::before{
-    position: absolute;
-    content: "";
-    height: 3px;
-    background-color:var(--main-color);
-    left: 50%;
-    transform: translate(-50%, -50%);
-    bottom: -5px;
-    transition: var(--main-transaction);
-}
-.gamep1 .head ul a::before{
-    opacity: 0;
-    width: 0;
-}
-.gamep1 .head ul a:hover::before{
-    opacity: 1;
-    width: 60%;
-}
-.gamep1 .head .logo{
-    width: 100px;
-}
-.gamep1 .head .logo img{
-    width:93px;
-    height: 100px;
-    padding: 5px 0;
-}
-@media(max-width:991px){
-   
-    .gamep1 .head ul li{
-        margin: 0 17px;
-    }
-}
-@media(min-width:992px){
-    .gamep1 .head ul{
-        justify-content: flex-end;
-        width: 550px;
-    }
-}
-/* End header game page 1 */
-
-/* Start loading game page 1 */
-.gamep1 .loading{
-    background-image: url(../image/edu.png);
-    background-position: center;
-    background-size: cover;
-    position: relative;
-    width: 100%;
-}
-.gamep1 .loading .image img{
-    position: absolute;
-    transform: translate(-50%,-50%);
-}
-.gamep1 .loading .image img:nth-child(1){
-    top: 300px !important;
-    right: 1430px;
-    animation: move-star 4s linear alternate infinite 1s;
-}
-.gamep1 .loading .content{
-    gap: 20px;
-    padding: 120px 0 30px;
-    flex-direction: row-reverse;
-}
-.gamep1 .loading .content .text{
-    width: 330px;
-}
-.gamep1 .loading .text p{
-    font-size: 1.25rem;
-    font-weight: 500;
-    line-height: 25px;
-    color: var(--main-color);
-    width: 190px;
-    height: 25px;
-}
-.gamep1 .loading .main{
-    height: 144px;
-    margin-top: 10px;
-}
-.gamep1 .loading .text h3{
-    font-size: 2.2rem;
-    line-height: 55px;
-    font-weight: 600;
-}
-.gamep1 .loading .links{
-    height: 65px;
-    margin-top: 95px;
-    display:flex;
-    gap: 55px;
-}
-.gamep1 .loading .links a{
-    font-size: 1.25rem;
-    font-weight: 600;
-    line-height: 25px;
-    color: var(--main-color);
-    height: 65px;
+.AboutGame .link{
+    margin: 90px auto;
+    width: fit-content;
+    border: 1px solid var(--main-color);
+    padding: 15px 70px;
     border-radius: 10px;
-    text-align: center;
-    padding: 18px 0;
+    transition: var(--main-transaction);
+    cursor: pointer;
 }
-.gamep1 .loading .links a:first-child{
-    background-color: var(--main-color);
+.AboutGame .link:hover{
+    border-color: white;
+}
+.AboutGame .link:hover a{
     color: white;
 }
-.gamep1 .loading .links a:first-child:hover{
-    border: 2px solid var(--main-color);
-    color:var(--main-color);
-    transition: var(--main-transaction);
-    background-color: #E6F9EF;
-}
-.gamep1 .loading .links a:last-child{
-    border: 2px solid var(--main-color);
-}
-.gamep1 .loading .links a:last-child:hover {
+.AboutGame .link::after{
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 0;
     background-color: var(--main-color);
-    color: white;
-    border: none;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 10px;
+    z-index: -1;
     transition: var(--main-transaction);
 }
-.gamep1 .loading .text img:not(.gamep1 .loading .imageQuery img){
-    position: relative;
-    right: 97px;
-    top: 10px;
-    animation: move-star 4s infinite linear 0.3s;
+.AboutGame .link:hover::after{
+    width: 100%;
+    height: 100%;
 }
-.gamep1 .loading .box{
-    width: 529px;
+.AboutGame .link a{
+    color: var(--main-color);
+    font-size: 1.25rem;
+    line-height: 1.5625rem;
+    font-weight: 600;
 }
-.gamep1 .loading .box .photo{
-    position: relative;
-    right: -300px;
-    top: -76px;
-    margin-top:-44px;
+.AboutGame .image img{
+    Width:529px;
+    Height:547px;
 }
-.gamep1 .loading .box .photo img{
-    width: 650px;
+.AboutGame .insertImages img{
+    top: 41px;
+    left: 53%;
 }
-@media(max-width:991px){
-    .gamep1 .loading{
-        min-height: 110vh;
-    }
-    .gamep1 .loading .content .text{
-        max-width: 100%;
-        margin-top: -80px;
-        margin-bottom: 20px;
-    }
-    .head ul a.active::after{
-        display: none;
-    }
-    .gamep1 .loading p{
-        margin-top: 40px;
-    }
-    .gamep1 .loading .links{
-        flex-direction: column;
-    }
-    .dis-none{
-        display: none;
-    }
-    .gamep1 .loading .imageQuery img {
-        width: 235px;
-        position: relative;
-        top: 176px;
-        left: 69px;
+@media (min-width:992px) {
+    .AboutGame .insertImages img{
         transform: translate(-50%,-50%);
     }
-}
-@media(min-width:992px){
-    .gamep1 .loading .content .text{
-        max-width:100% ;
+    .AboutGame .container{
+        gap: 100px;
     }
-    .gamep1 .loading .main{
-        width: 500px;
+    .AboutGame .content{
+        width: 600px;
     }
-    .gamep1 .loading .links{
-        width: 493px;
-    }    
-    .gamep1 .loading .links a{
-        width: 219px;
-    }
-    .gamep1 .loading .imageQuery{
-        display: none;
+    .AboutGame .image{
+        width: 477px;
     }
 }
-/* End  loading game page 1*/
-/* about game page1 */
-.gamep1 .about {
-    padding-top: 120px;
-    position: relative;
-  }
-  .gamep1 .about .image img{
-    position: absolute;
-    transform: translate(-50%,-50%);
-  }
- .gamep1 .about .image img:nth-child(1){
-    top: 550px;
-    right: 380px;
-    
- }
- .gamep1 .about .image img:nth-child(2){
-    top: 570px;
-    right: 1403px;
- }
- .gamep1 .about .image img:nth-child(3){
-    width: 86px;
-    height: 82px;
-    right: 850px;
- }
- .gamep1 .about .image img:nth-child(4){
-    top: 350px;
-    right: -50px;
- } 
-.gamep1 .about .left-image {
-    margin-right: 45px;
-  }
-.gamep1 .about .left-image img{
-	        animation: vibrate-1 1.5s linear infinite both;
-  }
-.gamep1 .about .row{
-    flex-direction: row-reverse;
-  }
-.gamep1 .about .about-heading span {
-    font-size: 30px;
-    font-weight: 500;
-    line-height: 42px;
-    text-align: right;
 
-  }
-  
-.gamep1 .about .about-heading p {
-    font-size: 20px;
-    font-weight: 500;
-    line-height: 25px;
-    text-align: right;
-    color: #00994F;
-    margin-top: 20px;
-  }
-
-.gamep1 .about .about-heading h5{
-    font-size: 18px;
-    font-weight: 400;
-    line-height: 30px;
-    color:#737373;
-    margin-top: 40px;
-
-}
 @media(max-width:991px){
-    .gamep1 .about .left-image img {
-        width: 300px;
-        height: 250px;
-        margin-top: -70px;
+    .AboutGame .container{
+        flex-direction: column-reverse;
     }
-    .gamep1 .about .image img:nth-child(4){
-    display: none;
+    .AboutGame .image img {
+        width: 100%;
+        height: 100%;
     }
-    .gamep1 .about .image img:nth-child(2){
+    .AboutGame .insertImages img:first-child {
+        transform: translate(-50%,-50%);
+        top: 30%;
+        left: 51px;
+    }
+    .AboutGame .dis-none{
         display: none;
-        }
-        .gamep1 .about .image img:nth-child(3){
-        width: 50px;
-        height: 50px;
-        right: -10px;
-        top: 60px;
-        }
-    .gamep1 .about .image img:nth-child(1){
-        right: 306px;
-        top: 319px;
-        }
-    .gamep1 .about .about-heading p{
-            text-align: center;
-        }    
-    .gamep1 .about .about-heading{
-        font-size: 22px;
+    }
+}
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {
+    .AboutGame .container{
+        flex-direction: column;
+        gap: 24px;
+    }
+    .AboutGame .content{
+        width: 100%;
+    }
+    .AboutGame .image{
+        width: 100%;
         text-align: center;
     }
-    
+    .AboutGame .insertImages img:first-child{
+        left: 5%;
+    }
 }
-/* Eng about game page 1  */
-/* Start games game page 1 */
-.gamep1 .games{
-    margin-top: 88px;
-    width: 100%;
-    height: auto;
-    position: relative;
+/* End AboutGame*/
+/* Start playGame  */
+.playGame{
+    margin-top: var(--main-margin-top);
 }
-.gamep1 .games .img2 img{
-    position: absolute;
-    top: 73px ; 
-}
-.gamep1 .games .img2 img:nth-child(1){
-    right: 15px;
-    top: 150px;
-    animation: move-star 4s linear alternate infinite 1s;
-}
-.gamep1 .games .img2 img:nth-child(2){
-    left: 130px;
-    animation: move-photo-1  2s linear alternate infinite;
-}
-.gamep1 .games .p1{
-    font-size: 20px;
-    font-weight: 500;
-    line-height: 25px;
-    text-align: center;
-    color: #00994F;    
-}
-.gamep1 .games .p2{
-    font-size: 30px;
-    font-weight: 500;
-    line-height: 42px;
-    text-align: center;
-}
-.gamep1 .games .container2{
-    display: block;
-    justify-content: center;
-}
-.gamep1 .games .container2 .car {
-    margin: 88px !important;
-}
-
-.gamep1 .games .container2 .car{
-    display: flex;
-    justify-content: space-between;
-    flex-direction: row;
-    flex-wrap: wrap;
-}
-.gamep1 .games .container2 .car .card{
-    border: white;
-    margin-bottom: 30px;
-    margin-right: 88px;
-    text-align: center;
-    box-shadow: 1px 3px 30px 0px #0000000D;
-}
-.gamep1 .games .container2 .car .card .btn{
-    width: 1000;
-    width: 173px;
-    height: 50px;
-    padding: 10px;
-    border-radius: 10px;
-    font-size: 18px;
-    font-weight: 600;
-    line-height: 23px;
-    text-align: center;
-    gap: 10px;
-}
-.gamep1 .games .container2 .car .card:hover {
-    transition: var(--main-transaction);
-    transform: scale(1.1);
-    box-shadow: 1px 3px 30px 0px #00000054 ;
-
-}
-.gamep1 .games .btn2{
-    width: 219px;
-    height: 65px;
-    padding: 10px;
-    border-radius: 10px;
-    display: grid;
-    gap: 10px;
-    background-color: #00994F;
-    color: white;
-    font-size: 20px;
-    font-weight: 600;
+.playGame .MainTitle{
     margin: auto;
-    align-items: center;
-} 
-.gamep1 .games .btn2:hover{
-    background-color: white;
-    color: #00994F;
-    border-color: #00994F;
 }
-@media(max-width:991px){
-    .gamep1 .games{
-         width: 100%;
-    }
-    .gamep1 .games .btn2 {
-        margin: auto;
-    }
-    .gamep1 .container2 .car {
-     display: flex;
-     flex-direction: column;
-     flex-wrap: nowrap;
-    }
-    .gamep1  .games .container2 .car{
-        margin: 0 !important;
-    }
-    .gamep1.games .container2 .car .dis{
-        display: none;
-    }
-    .gamep1 .container2 .car .card1 {
-        align-items: center !important;
-        width: 315px;
-        margin-top: 55px;
-    }
-    .gamep1 .games {
-        position: relative;
-    }
-    .gamep1 .games .img2 img{
-        position: absolute;
-        top: 4470px;
-        right: 5px;
-    }
-    .gamep1 .games .img2 img:nth-child(1){
-        width: 71px;
-        height: 58px;
-        top: 94rem;
-    }
-    .gamep1 .games .img2 img:nth-child(2){
-        width: 72px;
-        height: 72px;
-        margin-top: 10rem;
-    }
-}
-/* End games game page 1  */
-/* End game page 1 */
-
-/* Start game page 2 */
-
-/* Start header game page 2 */
-.gamep2 .head{
-    max-width: 100%;
-}
-.gamep2 .head .image img{
-    right: 0px;
-    margin-left: 250px;
-}
-.gamep2 .head .navbar-expand-lg .navbar-collapse{
-    flex-direction: row-reverse;
-}
-.gamep2 .head ul {
-    gap: 20px;
-    height: 35px;
-}
-.gamep2 .head ul a{
-    font-size: 1.12rem;
+.playGame .MainTitle p{
     font-weight: 500;
-    line-height: 22.5px;
-    color: #737373;
-    position: relative;
+    font-size:1.25rem ;
+    line-height:1.5625rem ;
 }
-.gamep2 .head ul a:hover{
-    color: var(--main-color);
-    transition: var(--main-transaction);
-}
-.gamep2 .head ul a.active{
-    font-weight: 600;
-    color: var(--main-color) !important;
-    position: relative;
-}
-.gamep2 .head ul a.active::after{
-    position: absolute;
-    content: "";
-    width: 60%;
-    height: 3px;
-    background-color:var(--main-color);
-    left: 50%;
-    transform: translate(-50%, -50%);
-    bottom: -5px;
-    transition: var(--main-transaction);
-}
-.gamep2 .head ul a::before{
-    position: absolute;
-    content: "";
-    height: 3px;
-    background-color:var(--main-color);
-    left: 50%;
-    transform: translate(-50%, -50%);
-    bottom: -5px;
-    transition: var(--main-transaction);
-}
-.gamep2 .head ul a::before{
-    opacity: 0;
-    width: 0;
-}
-.gamep2 .head ul a:hover::before{
-    opacity: 1;
-    width: 60%;
-}
-.gamep2 .head .logo{
-    width: 100px;
-}
-.gamep2 .head .logo img{
-    width:93px;
-    height: 100px;
-    padding: 5px 0;
-}
-@media(max-width:991px){
-   
-    .gamep2 .head ul li{
-        margin: 0 17px;
-    }
-}
-@media(min-width:992px){
-    .gamep2 .head ul{
-        justify-content: flex-end;
-        width: 550px;
-    }
-}
-/* End header game page 2 */
-
-/* Start loading game page 2*/
-.gamep2 .loading{
-    background-image: url(../image/edu.png);
-    background-position: center;
-    background-size: cover;
-    position: relative;
-    width: 100%;
-}
-.gamep2 .loading .image img{
-    position: absolute;
-    transform: translate(-50%,-50%);
-}
-.gamep2 .loading .image img:nth-child(1){
-    right: 1430px;
-    top: 300px !important;
-}
-.gamep2 .loading .content{
-    gap: 20px;
-    padding: 120px 0 30px;
-    flex-direction: row-reverse;
-}
-.gamep2 .loading .content .text{
-    width: 330px;
-}
-.gamep2 .loading .text p{
-    font-size: 1.25rem;
+.playGame .MainTitle h4{
     font-weight: 500;
-    line-height: 25px;
-    color: var(--main-color);
-    width: 190px;
-    height: 25px;
+    font-size: 1.875rem;
+    line-height:2.625rem ;
 }
-.gamep2 .loading .main{
-    height: 144px;
-    margin-top: 10px;
+.playGame .content{
+    grid-template-columns: repeat(auto-fill,minmax(331px,1fr));
+    gap: 44px;
+    margin-top: 35px;
 }
-.gamep2 .loading .text h3{
-    font-size: 2.2rem;
-    line-height: 55px;
-    font-weight: 600;
+.playGame .box .image{
+    border-radius: 5px;
 }
-.gamep2 .loading .links{
-    height: 65px;
-    margin-top: 95px;
-    display:flex;
-    gap: 55px;
-}
-.gamep2 .loading .links a{
-    font-size: 1.25rem;
-    font-weight: 600;
-    line-height: 25px;
-    color: var(--main-color);
-    height: 65px;
-    border-radius: 10px;
-    text-align: center;
-    padding: 18px 0;
-}
-.gamep2 .loading .links a:first-child{
-    background-color: var(--main-color);
-    color: white;
-}
-.gamep2 .loading .links a:first-child:hover{
-    border: 2px solid var(--main-color);
-    color:var(--main-color);
-    transition: var(--main-transaction);
-    background-color: #E6F9EF;
-}
-.gamep2 .loading .links a:last-child{
-    border: 2px solid var(--main-color);
-}
-.gamep2 .loading .links a:last-child:hover {
-    background-color: var(--main-color);
-    color: white;
-    border: none;
-    transition: var(--main-transaction);
-}
-.gamep2 .loading .text img:not(.gamep2 .loading .imageQuery img){
-    position: relative;
-    right: 97px;
-    top: 10px;
-    animation: move-star 4s infinite linear 0.3s;
-}
-.gamep2 .loading .box{
-    width: 529px;
-}
-.gamep2 .loading .box .photo{
-    position: relative;
-    right: -300px;
-    top: -76px;
-    margin-top:-44px;
-}
-.gamep2 .loading .box .photo img{
-    width: 650px;
-}
-@media(max-width:991px){
-    .gamep2 .loading{
-        min-height: 110vh;
-    }
-    .gamep2 .loading .content .text{
-        max-width: 100%;
-        margin-top: -80px;
-        margin-bottom: 20px;
-    }
-    .head ul a.active::after{
-        display: none;
-    }
-    .gamep2 .loading p{
-        margin-top: 40px;
-    }
-    .gamep2 .loading .links{
-        flex-direction: column;
-    }
-    .dis-none{
-        display: none;
-    }
-    .gamep2 .loading .imageQuery img {
-        width: 235px;
-        position: relative;
-        top: 176px;
-        left: 69px;
-        transform: translate(-50%,-50%);
-    }
-}
-@media(min-width:992px){
-    .gamep2 .loading .content .text{
-        max-width:100% ;
-    }
-    .gamep2 .loading .main{
-        width: 500px;
-    }
-    .gamep2 .loading .links{
-        width: 493px;
-    }    
-    .gamep2 .loading .links a{
-        width: 219px;
-    }
-    .gamep2 .loading .imageQuery{
-        display: none;
-    }
-}
-/* End  loading game page 2 */
-/* about game page 2 */
-
-.gamep2 .about {
-    padding-top: 120px;
-    position: relative;
-  }
-.gamep2  .about .image img{
-    position: absolute;
-    transform: translate(-50%,-50%);
-  }
-.gamep2 .about a{
-    width: 230px;
-    height: 50px;
-    padding: 10px;
-    border-radius: 10px;
-    font-size: 18px;
-    text-align: center;
-    position: relative;
-    top: 130px;
-    right: 180px;    
-}
-
-.gamep2 .about .image img:nth-child(1){
-    width: 78px;
-    height: 78px;
-    top: 130px;
-    right: 660px;
-    left: 686px;
-    transform: rotate(-16.42deg);
-    animation: move-star 4s linear alternate infinite 1s;
-}
-.gamep2 .about .image img:nth-child(2){
-    top: 400px;
-    right: -45px;
- }
-.gamep2 .about .left-image {
-    margin-right: 45px;
-  }
-.gamep2 .about .row{
-    flex-direction: row-reverse;
-}
-.gamep2 .about .about-heading span {
-    font-size: 30px;
-    font-weight: 500;
-    line-height: 42px;
-    text-align: right;
-}
-  
-.gamep2 .about .about-heading p {
-    font-size: 20px;
-    font-weight: 500;
-    line-height: 25px;
-    text-align: right;
-    color: #00994F;
-    margin-top: 20px;
-}
-.gamep2 .about .about-heading h5{
-    font-size: 18px;
-    font-weight: 400;
-    line-height: 30px;
-    color:#737373;
-    margin-top: 40px;
-
-}  
-@media(max-width:991px){
-    .gamep2 .about .left-image img {
-        width: 300px;
-        height: 250px;
-        margin-top: -70px;
-    }
-    .gamep2 .about .image img:nth-child(4){
-    display: none;
-    }
-    .gamep2 .about .image img:nth-child(2){
-        display: none;
-        }
-    .gamep2 .about .image img:nth-child(3){
-        width: 50px;
-        height: 50px;
-        right: -10px;
-        top: 60px;
-        }
-    .gamep2 .about .image img:nth-child(1){
-        right: 325px;
-        top: 319px;
-        }
-    .gamep2 .about .about-heading p{
-            text-align: center;
-        }    
-    .gamep2 .about .about-heading{
-        font-size: 22px;
-        text-align: center;
-    }
-    .gamep2 .about a{
-        position: relative;
-        top: 100px;
-        right: 100px;
-    }
-    
-}
-/* End about game page 2 */
-
- /* Start gaming game page 2 */
- .gamep2 .games{
-    margin-top: 88px;
-    width: 100%;
-    height: auto;
-    position: relative;
-}
-.gamep2 .games .img2 img{
-    position: absolute;
-    top: 73px ; 
-}
-.gamep2 .games .p1{
-    font-size: 20px;
-    font-weight: 500;
-    line-height: 25px;
-    text-align: center;
-    color: #00994F;
-    
-}
-.gamep2 .games .p2{
-    font-size: 30px;
-    font-weight: 500;
-    line-height: 42px;
-    text-align: center;
-    margin-bottom: 50px;
-}
-.gamep2.games .container2{
-    display: block;
-    justify-content: center;    
-}
-.gamep2 .games .container2 .car .col{
+.playGame .box .image img{
     width: 326px;
-    height: 300px;
-    border-radius: 10px;
-
 }
-.gamep2.games .container2 .car {
-    margin: 88px !important;
+.playGame .insertImage{
+    transform: translate(-50%,-50%);
+    top: 50px;
+    left: 20%;
 }
-
-.gamep2 .games .container2 .car{
-    display: flex;
-    justify-content: space-around;
-    flex-direction: row-reverse;
+.playGame .insertImage img{
+    width: 74px;
+    height: 74px;
 }
-.gamep2 .games .img2 img:nth-child(1){
-    right: 407px;
-    top: -51px;
-    animation: move-star 4s linear alternate infinite 1s;
- }
- .gamep2 .games .img2 img:nth-child(2){
-    left: 121px;
-    top: 500px;
-    animation: move-star 4s linear alternate infinite 1s;
+.playGame .imageHeart{
+    top:10px ;
+    right: 12%;
+}
+.playGame .imageHeart img{
+    width: 100px;
+}
+@media(min-width:992px){
+    .playGame .MainTitle{
+        width: 656px;
+    }
+    .playGame .MainTitle h4{
+        width: 630px;
+    }
 }
 @media(max-width:991px){
-    .gamep2 .games{
-         width: 100%;
-         margin-top: 188px;
+    .playGame .insertImage{
+        top: -8px;
     }
-    .gamep2 .games .btn2 {
-        margin: auto;
+    .playGame .insertImage img{
+        width: 45px;
+        height: 45px;
     }
-    .gamep2 .container2 .car {
-     display: flex;
-     flex-direction: column;
-     flex-wrap: nowrap;
+    .playGame .box .image img{
+        width: 100%;
     }
-    .gamep2 .games .container2 .car {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+    .playGame .imageHeart img{
+        width: 55px;
     }
-    .gamep2 .games .col {
-        margin-bottom: 88px;
-    }
-    .gamep2 .container2 .car .card1 {
-        align-items: center !important;
-        width: 315px;
-        margin-top: 55px;
-    }
-    .gamep2 .games {
-        position: relative;
-    }
-    .gamep2 .games .img2 img{
-        position: absolute;
-        top: 4470px;
-        right: 5px;
-    }
-    .gamep2 .games .img2 img:nth-child(1){
-        width: 71px;
-        height: 58px;
-        right: 10px;
-        top: 0px;
-    }
-    .gamep2 .games .img2 img:nth-child(2){
-        width: 72px;
-        height: 72px;
-        top: 1250px;
-        
+    .playGame .imageHeart{
+        top: 62px;
+        right: 15px;
     }
 }
-
- /* End gaming game page 2*/
-
- /* Start gaming other game page 2 */
- .gamep2 .gameso{
-    margin-top: 88px;
-    width: 100%;
-    height: auto;
-    position: relative;
-}
-.gamep2 .gameso .img2 img{
-    position: absolute;
-    top: 73px ; 
-}
-.gamep2 .gameso .img2 img:nth-child(1){
-    transform: rotate(-16.42deg);
-    left: 50px;
-    top: 650px;
-}
-.gamep2 .gameso .img2 img:nth-child(2){
-    top: 650px;
-    right: 50px;
-}
-.gamep2 .gameso .p1{
-    font-size: 20px;
-    font-weight: 500;
-    line-height: 25px;
-    text-align: center;
-    color: #00994F;    
-}
-.gamep2 .gameso .p2{
-    font-size: 30px;
-    font-weight: 500;
-    line-height: 42px;
-    text-align: center;
-}
-.gamep2 .gameso .container2{
-    display: block;
-    justify-content: center;
-}
-.gamep2 .gameso .container2 .car {
-    margin: 88px !important;
-}
-
-.gamep2 .gameso .container2 .car{
-    display: flex;
-    justify-content: space-between;
-    flex-direction: row;
-    flex-wrap: wrap;
-}
-.gamep2 .gameso .container2 .car .card{
-    border: white;
-    margin-bottom: 30px;
-    margin-right: 88px;
-    text-align: center;
-    box-shadow: 1px 3px 30px 0px #0000000D;
-}
-.gamep2 .gameso .container2 .car .card .btn{
-    width: 1000;
-    width: 173px;
-    height: 50px;
-    padding: 10px;
+/* End playGame  */
+/* End Page Game */
+/* Start Add new task */
+.Tasks #AddNewTask{
     border-radius: 10px;
-    font-size: 18px;
-    font-weight: 600;
-    line-height: 23px;
-    text-align: center;
-    gap: 10px;
+    border: 1px dotted var(--main-color);
+    padding: 20px 50px;
+    width: fit-content;
+    margin:  60px auto 0;
 }
-.gamep2 .gameso .container2 .car .card:hover {
+.Tasks #AddNewTask button{
+    outline: none;
+    border: none;
+    background-color: rgb(255 255 255 / 0%);
+}
+.Tasks #AddNewTask a{
+    font-weight: 500;
+    font-size: 22px;
+    line-height: 27.5px;
+    color: var(--main-color);
+}
+.Tasks #AddNewTask:hover{
+    border: none;
+    background-color: var(--main-color);
     transition: var(--main-transaction);
-    transform: scale(1.1);
-    box-shadow: 1px 3px 30px 0px #00000054 ;
-
 }
-.gamep2 .gameso .btn2{
-    width: 219px;
-    height: 65px;
-    padding: 10px;
-    border-radius: 10px;
-    display: grid;
-    gap: 10px;
-    background-color: #00994F;
+.Tasks #AddNewTask:hover a{
     color: white;
-    font-size: 20px;
-    font-weight: 600;
-    margin: auto;
-    align-items: center;
-} 
-.gamep2 .gameso .btn2:hover{
-    background-color: white;
-    color: #00994F;
-    border-color: #00994F;
+    transition: var(--main-transaction);
 }
-@media(max-width:991px){
-    .gamep2 .gameso{
-         width: 100%;
-    }
-    .gamep2 .gameso .btn2 {
-        margin: auto;
-    }
-    .gamep2 .container2 .car {
-     display: flex;
-     flex-direction: column;
-     flex-wrap: nowrap;
-    }
-    .gamep2  .gameso .container2 .car{
-        margin: 0 !important;
-    }
-    .gamep2.gameso .container2 .car .dis{
-        display: none;
-    }
-    .gamep2 .container2 .car .card1 {
-        align-items: center !important;
-        width: 315px;
-        margin-top: 55px;
-    }
-    .gamep2 .gameso {
-        position: relative;
-    }
-    .gamep2 .gameso .img2 img{
-        position: absolute;
-        top: 4470px;
-        right: 5px;
-    }
-    .gamep2 .gameso .img2 img:nth-child(1){
-        width: 71px;
-        height: 58px;
-        top: 94rem;
-    }
-    .gamep2 .gameso .img2 img:nth-child(2){
-        width: 72px;
-        height: 72px;
-        top: 100px;
-        right: 20px;    }
-}
-
-/* End gaming other game page 2*/
-
-/* End game page 2  */
-
+/* Start Add End task */
 /* Start tasksList */
 .ListTask{
     margin-top: var(--main-margin-top);
@@ -3375,12 +2818,17 @@ input{
     padding: 20px 30px;
     border-radius: 5px;
 }
+.ListTask .DoTask button{
+    outline: none;
+    border: none;
+    background-color: white;
+}
 .ListTask .DoTask i{
     color: #737373;
     font-size: 1.375rem;
 }
 .ListTask .DoTask i:hover{
-    transform: scale(1.5          );
+    transform: scale(1.5);
     transition: var(--main-transaction);
 }
 .ListTask .DoTask input{
@@ -3395,7 +2843,7 @@ input{
 }
 @media(min-width:992px){
     .ListTask .DoTask{
-        width:809px ;
+        width:809px;
     }
     .ListTask .MainTitle h4{
         width: 665px;
@@ -3412,7 +2860,7 @@ input{
     }
 }
 /* End tasksList */
-/* Start TodayTasks  And Yesterday`s Tasks*/
+/* Start TodayTasks*/
 .TodayTasks{
     margin-top: var(--main-margin-top);
 }
@@ -3435,14 +2883,22 @@ input{
 .YesterdayTasks .content .box{
     padding: 15px;
     border-radius: 10px;
-    background-color: #FE68BF;
+    border: 1px solid #FE68BF;
 }
 .TodayTasks .content .box i{
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     transition: var(--main-transaction);
+    left: 5px;
+    top: 3px;
 }
 .TodayTasks .content .box i:hover{
     color: red;
+}
+.TodayTasks .content .box input[type="checkbox"] {
+    accent-color:white;
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
 }
 .TodayTasks .content .box h4{
     font-size: 1.75rem;
@@ -3461,7 +2917,7 @@ input{
         margin-top: 20px;
     }
 }
-/* End TodayTasks  And Yesterday`s Tasks */
+/* End TodayTasks*/
 /* Start personal section  */
 .personal{
     margin-top: var(--main-margin-top);
@@ -3759,10 +3215,8 @@ input{
         height: 50px;
     }
 }
-
 /* End  SeeVideo */
 /* Start OthersVideo */
-
 .OthersVideo{
     margin-top: var(--main-margin-top);
     display: none;
@@ -3789,7 +3243,6 @@ input{
     border-radius: 0.625rem;
     top: 0px;
 }
-
 .OthersVideo .video video{
     border-radius: 0.625rem;
     width: 100%;
@@ -3803,26 +3256,12 @@ input{
 .ChangeInfo{
     border-radius: 10px;
     background-color: white;
-    transform: translate(-50%,-50%);
-    top: 30%;
-    left: 45%;
-    z-index: 100;
-}
-.ChangeInfo .container{
-    padding: 40px;
-}
-.ChangeInfo h3{
-    font-size: 1.875rem;
-    font-weight: 600;
-    line-height: 2.375rem;
-    padding: 0 0 20px;
 }
 .ChangeInfo .Inputs{
-    margin:20px auto;
+    margin:20px auto 0;
     padding: 14px 16px;
     border-radius: 10px;
     border: 1px solid #737373;
-
 }
 .ChangeInfo div i{
     font-size: 1.39rem;
@@ -3845,6 +3284,7 @@ input{
 }
 .ChangeInfo .images{
     gap: 50px;
+    margin-top: 30px;
 }
 .ChangeInfo .images img.manPhoto{
     width: 74px;
@@ -3889,17 +3329,19 @@ input{
 .ChangeInfo .IconImage i{
     position: absolute;
     transform: translate(-50%,-50%);
-    top: 47%;
+    top: 53%;
     color: white;
     z-index: 100;
 }
 .ChangeInfo .IconImage i:first-child{
-    left: 41%;
+    left: 40.4%;
     display: none;
+
 }
 .ChangeInfo .IconImage i:last-child{
-    left: 59%;
+    left: 48.7%;
     display: none;
+    top: 53%;
 }
 .ChangeInfo .Text{
     Width:491px;

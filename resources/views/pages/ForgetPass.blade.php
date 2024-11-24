@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>OCD</title>
+    <link rel="shortcut icon" type="image/x-icon" href="../style pages/image/Graduation logo 3.png">
     <!-- Bootstrap file -->
     <link rel="stylesheet" href="{{asset('../style pages/boot/bootstrap.min.css')}}">
     <!-- css file -->
@@ -23,15 +24,31 @@
                 <div class="container mainPadding containerPage">
                     <div>
                         <h3 class="mainH3">نسيت كلمه السر ؟</h3>
-                        <span>من فضلك أدخل البريد الإلكتروني أو الهاتف المرتبط بالموقع</span>
+                        <span>من فضلك أدخل البريد الإلكتروني المرتبط بالموقع</span>
                     </div>
-                    <form action="#">
-                        <input type="text" placeholder="رقم الهاتف أو الإيميل" class="d-block w-75">
+
+
+                    @if (Session::has('error'))
+                    <div class="alert alert-danger" role="alert">
+                         {{Session::get('error')}}
+                    </div>
+                   @endif
+
+                    <form  method="POST" action="{{ route('forget') }}">
+                        @csrf
+
+                        <input type="text email" placeholder="الإيميل" class="d-block" name="email">
+                        <div class="switch">
+                            <div class="loginSubmit">
+                                <input type="submit" name='sigup' value="ارسال" class="d-block sendBtn text-center w-75">
+                            </div>
+
+                            <div class="text-center">
+                                <a style=" text-decoration: none; margin-top: 8px;">- أو -</a>
+                                <a href="{{ url('forgetpass phone') }}" style="color: #4CAF50; text-decoration: none; margin-top: -60px;">رقم الهاتف</a>
+                            </div>
                     </form>
-                    <div class="switch">
-                        <div class="loginSubmit">
-                            <a href="{{url('Code')}}" class="text-center">إرسال الرمز</a>
-                        </div>
+
                     </div>
                 </div>
             </div>
