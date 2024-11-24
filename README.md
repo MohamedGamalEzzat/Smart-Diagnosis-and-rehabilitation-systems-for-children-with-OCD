@@ -58,8 +58,8 @@ Eng. Rana Khattab
 
 <h2>Graduation Project 2023-2024</h2>
 
- 
- <h2>https://mogamal.itch.io/</h2>
+ <h3>Games</h3>
+ <h4>https://mogamal.itch.io/</h4>
  
 ## Photos from Project
 
